@@ -58,15 +58,20 @@
 
     <div class="page-content">
       <div class="wrapper">
-        <div class="post">
+        <div class="post" id="for_width">
 
   <header class="post-header">
     <h1 class="post-title"><strong>Gal Metzer</strong></h1>
     <h5 class="post-description"></h5>
   </header>
 
-  <article class="post-content <strong>Gal Metzer</strong> clearfix">
-    
+  <article class="post-content <strong>Gal Metzer</strong> clearfix" id="main_article">
+    <script src="https://threejs.org/build/three.js"></script>
+<script src='https://threejs.org/examples/js/controls/OrbitControls.js'></script>
+<script src='https://threejs.org/examples/js/loaders/OBJLoader.js'></script>
+<script src="/assets/js/mesh.js"></script>
+
+
   <div class="profile col one right">
     
       <img class="one" src="/assets/img/perfil.png">
@@ -78,6 +83,10 @@
 <p>I’m a graduate student at Tel Aviv University, under the supervision of <a href="https://raja469.wixsite.com/my-site" target="\_blank">Raja Giryes</a> and <a href="https://www.cs.tau.ac.il/~dcor/index.html" target="\_blank">Daniel Cohen-Or</a>.</p>
 
 <p>Interested in 3D Deep Learning and geometry processing.</p>
+
+
+
+
 
 
   </article>
@@ -517,6 +526,13 @@
 </div>
 
   
+
+    <div id="mesh1" class="center">
+
+             <script>render('#mesh1', "https://ranahanocka.github.io/point2mesh/meshes/G.obj",
+             THREE.FlatShading);</script>
+  
+</div>
 
     
     <div class="news" id="talks">
