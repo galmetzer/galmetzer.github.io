@@ -1,3 +1,6 @@
+// import { OrbitControls } from "https://threejs.org/examples/jsm/controls/OrbitControls.js";
+
+
 function render(id, objpath, shade) {
     var scene = new THREE.Scene();
     scene.background = new THREE.Color(0x8FBCD4);
@@ -24,7 +27,7 @@ function render(id, objpath, shade) {
 
     var material = new THREE.MeshPhongMaterial(
     {color: 0xffffff,
-     shading: shade});
+     flatShading: shade});
 
     var lightHolder = new THREE.Group();
 
