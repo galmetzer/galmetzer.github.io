@@ -25,6 +25,20 @@ function render(id, objpath, shade) {
 
     var controls = new THREE.OrbitControls(camera, renderer.domElement);
 
+    // Slowly rotate the model until the visitor interacts with it. OrbitControls
+    // emits "start" for mouse, wheel, and touch interactions.
+    var prefersReducedMotion = window.matchMedia &&
+        window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    controls.autoRotate = !prefersReducedMotion;
+    controls.autoRotateSpeed = 5.0;
+
+    function stopAutoRotate() {
+        controls.autoRotate = false;
+        controls.removeEventListener('start', stopAutoRotate);
+    }
+
+    controls.addEventListener('start', stopAutoRotate);
+
     var material = new THREE.MeshPhongMaterial(
     {color: 0xffffff,
      flatShading: shade});

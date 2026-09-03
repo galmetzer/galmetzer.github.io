@@ -9,11 +9,28 @@
   <title>Gal Metzer</title>
   <meta name="description" content="">
 
+  <script>
+  (function () {
+    var theme;
+    try {
+      theme = localStorage.getItem('theme');
+    } catch (error) {}
+
+    if (theme !== 'light' && theme !== 'dark') {
+      theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    }
+
+    document.documentElement.dataset.theme = theme;
+  }());
+</script>
+
+
   <link rel="shortcut icon" href="/assets/img/favicon.png">
    <link rel="stylesheet" href="/assets/css/main.css">
     <link rel="stylesheet" href="/assets/css/style.css">
 
    <link rel="stylesheet" href="/assets/css/other-main.css">
+  <link rel="stylesheet" href="/assets/css/theme.css">
   <link rel="canonical" href="/">
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -45,6 +62,11 @@
         <a class="page-link" href="#publications">publications</a>
         <a class="page-link" href="#talks">talks</a>
         <a class="page-link" href="#social">contact</a>
+
+        <button class="theme-toggle" type="button" aria-label="Switch color theme" title="Switch color theme">
+  <span class="theme-toggle__light" aria-hidden="true">&#9728;</span>
+  <span class="theme-toggle__dark" aria-hidden="true">&#9790;</span>
+</button>
 
 
       </div>
@@ -80,17 +102,25 @@
 
   <div class="profile col one right">
     
-      <img class="one" src="/assets/img/perfil.png">
+      <img class="one" src="/assets/img/perfil_2.png">
     
     
   </div>
 
 
+
 <p>I am a PhD student at Tel Aviv University, under the supervision of <a href="https://www.giryes.sites.tau.ac.il" target="\_blank">Raja Giryes</a> and <a href="https://danielcohenor.com" target="\_blank">Daniel Cohen-Or</a>.</p>
 
-<p>Interested in 3D Deep Learning, geometry processing, and diffusion models.</p>
+<p>I am interested in 3D deep learning, geometry processing, diffusion models and video generation. 
+<br />Not necessarily in this order.</p>
 
 
+  <span class="contacticon center">
+    <a href="mailto:gal dot metzer at gmail dot com"><i class="fa fa-envelope-square"></i></a>
+    <a href="https://scholar.google.com/citations?user=QVeYd9YAAAAJ" target="_blank" title="Google Scholar"><i class="ai ai-google-scholar-square"></i></a>
+    <a href="https://github.com/galmetzer" target="_blank" title="GitHub"><i class="fa fa-github-square"></i></a>
+    <a href="https://twitter.com/galmetz" target="_blank" title="Twitter" class="contact-icon"><i class="fa fa-twitter-square"></i></a>
+  </span>
 
 
 
@@ -109,6 +139,119 @@
   
     <h3 class="year">2026</h3>
     <ol class="bibliography"><li><div class="img_row" style="height: 100%;">
+  <div class="col one ">
+      <img src="/assets/img/attn_triangle-transparent.png" class="rounded z-depth-1" style="max-width: 100%;" alt="">
+  </div>
+    <div class="col two">
+      
+
+  <div id="attn_triangle">
+    
+      <span class="title" style="font-weight: bold">The Attention Triangle in Audio-Video Models</span>
+      <span class="author">
+        
+          
+            
+              
+                <a href="https://sagipolaczek.github.io/" target="_blank">Sagi Polaczek </a>,
+              
+            
+          
+        
+          
+            
+              
+                <a href="https://scholar.google.com/citations?user=iWbVXP4AAAAJ&hl=en" target="_blank">Noa Kraicer </a>,
+              
+            
+          
+        
+          
+            
+              
+                  
+  
+                    
+                      Gal Metzer, 
+                    
+
+                  
+              
+            
+          
+        
+          
+            
+              
+                  
+                    Zhuo Ning,
+                  
+              
+            
+          
+        
+          
+            
+              
+                <a href="https://arash-mham.github.io/" target="_blank">Ali Mahdavi-Amiri </a>,
+              
+            
+          
+        
+          
+            
+              
+                <a href="https://www.cs.tau.ac.il/~dcor/" target="_blank">Daniel Cohen-Or </a>,
+              
+            
+          
+        
+          
+            
+              
+                <a href="https://www.giryes.sites.tau.ac.il/" target="_blank">Raja Giryes </a>
+              
+            
+          
+        
+      </span>
+
+      <span class="periodical">
+
+      <span class="links">
+        
+        <em style="color:#666;font-weight: bold;">
+          Arxiv 2026
+        </em>
+      
+    
+      </span>
+
+  <span class="links">
+    
+
+  </span>
+
+      </span>
+    
+
+    <span class="links">
+    
+        <a class="btn button" href="" target="_blank">paper</a>
+    
+    
+        <a class="btn button" href="https://sagipolaczek.github.io/The-Attention-Triangle" target="_blank">page</a>
+    
+    
+        <a class="btn button" href="https://github.com/SagiPolaczek/The-Attention-Triangle" target="_blank">code</a>
+    
+    
+    </span>
+  </div>
+
+    </div>
+</div></li>
+<li><div class="img_row" style="height: 100%;">
   <div class="col one ">
       <img src="/assets/img/spf2.gif" class="rounded z-depth-1" style="max-width: 100%;" alt="">
   </div>
@@ -207,7 +350,7 @@
     <h3 class="year">2023</h3>
     <ol class="bibliography"><li><div class="img_row" style="height: 100%;">
   <div class="col one ">
-      <img src="/assets/img/neti.png" class="rounded z-depth-1" style="max-width: 100%;" alt="">
+      <img src="/assets/img/neti-transparent.png" class="rounded z-depth-1" style="max-width: 100%;" alt="">
   </div>
     <div class="col two">
       
@@ -294,7 +437,7 @@
 </div></li>
 <li><div class="img_row" style="height: 100%;">
   <div class="col one ">
-      <img src="/assets/img/sts.png" class="rounded z-depth-1" style="max-width: 100%;" alt="">
+      <img src="/assets/img/sts-transparent.png" class="rounded z-depth-1" style="max-width: 100%;" alt="">
   </div>
     <div class="col two">
       
@@ -391,7 +534,7 @@
 </div></li>
 <li><div class="img_row" style="height: 100%;">
   <div class="col one ">
-      <img src="/assets/img/TEXTure_rep.png" class="rounded z-depth-1" style="max-width: 100%;" alt="">
+      <img src="/assets/img/TEXTure_rep-transparent.png" class="rounded z-depth-1" style="max-width: 100%;" alt="">
   </div>
     <div class="col two">
       
@@ -488,7 +631,7 @@
 </div></li>
 <li><div class="img_row" style="height: 100%;">
   <div class="col one ">
-      <img src="/assets/img/latent_nerf2.png" class="rounded z-depth-1" style="max-width: 100%;" alt="">
+      <img src="/assets/img/latent_nerf2-transparent.png" class="rounded z-depth-1" style="max-width: 100%;" alt="">
   </div>
     <div class="col two">
       
@@ -583,7 +726,7 @@
     <h3 class="year">2022</h3>
     <ol class="bibliography"><li><div class="img_row" style="height: 100%;">
   <div class="col one ">
-      <img src="/assets/img/tetgan.png" class="rounded z-depth-1" style="max-width: 100%;" alt="">
+      <img src="/assets/img/tetgan-transparent.png" class="rounded z-depth-1" style="max-width: 100%;" alt="">
   </div>
     <div class="col two">
       
@@ -678,7 +821,7 @@
 </div></li>
 <li><div class="img_row" style="height: 100%;">
   <div class="col one ">
-      <img src="/assets/img/z2p_2.png" class="rounded z-depth-1" style="max-width: 100%;" alt="">
+      <img src="/assets/img/z2p_2-transparent.png" class="rounded z-depth-1" style="max-width: 100%;" alt="">
   </div>
     <div class="col two">
       
@@ -773,7 +916,7 @@
 </div></li>
 <li><div class="img_row" style="height: 100%;">
   <div class="col one ">
-      <img src="/assets/img/deepmls.png" class="rounded z-depth-1" style="max-width: 100%;" alt="">
+      <img src="/assets/img/deepmls-transparent.png" class="rounded z-depth-1" style="max-width: 100%;" alt="">
   </div>
     <div class="col two">
       
@@ -866,7 +1009,7 @@
 </div></li>
 <li><div class="img_row" style="height: 100%;">
   <div class="col one ">
-      <img src="/assets/img/IRS2.png" class="rounded z-depth-1" style="max-width: 100%;" alt="">
+      <img src="/assets/img/IRS2-transparent.png" class="rounded z-depth-1" style="max-width: 100%;" alt="">
   </div>
     <div class="col two">
       
@@ -1402,6 +1545,49 @@
     
     
       <tr>
+        <td class="date">Jul 21, 2026</td>
+        <td class="announcement">
+          
+            SIGGRAPH 2026: Video Analysis and Generation via a Semantic Progress Function
+
+          
+        </td>
+      </tr>
+    
+      <tr>
+        <td class="date">Jun 30, 2026</td>
+        <td class="announcement">
+          
+            Meta: Video Analysis and Generation via a Semantic Progress Function
+
+
+          
+        </td>
+      </tr>
+    
+      <tr>
+        <td class="date">Jun 29, 2026</td>
+        <td class="announcement">
+          
+            Bar Ilan: Video Analysis and Generation via a Semantic Progress Function
+
+
+          
+        </td>
+      </tr>
+    
+      <tr>
+        <td class="date">Aug 1, 2023</td>
+        <td class="announcement">
+          
+            SIGGRAPH 2023: TEXTure: Text-Guided Texturing of 3D Shapes
+
+
+          
+        </td>
+      </tr>
+    
+      <tr>
         <td class="date">Mar 21, 2023</td>
         <td class="announcement">
           
@@ -1416,6 +1602,27 @@
         <td class="announcement">
           
             MIT CSAIL: Deep Learning for 3D Applications
+
+          
+        </td>
+      </tr>
+    
+      <tr>
+        <td class="date">Aug 9, 2022</td>
+        <td class="announcement">
+          
+            SIGGRAPH 2022: Self-Sampling for Neural Point Cloud Consolidation
+
+
+          
+        </td>
+      </tr>
+    
+      <tr>
+        <td class="date">Apr 28, 2022</td>
+        <td class="announcement">
+          
+            Eurographics 2022: Z2P: Instant Visualization of Point Clouds
 
           
         </td>
@@ -1483,6 +1690,9 @@ Orienting Point clouds with Dipole Propagation
 
 <!-- Load Common JS -->
 <script src="/assets/js/common.js"></script>
+
+<!-- Light/dark color scheme -->
+<script src="/assets/js/theme.js"></script>
 
 
 <!-- Load KaTeX -->

@@ -1,0 +1,51 @@
+/* Color schemes for the site's al-folio styles. This file has Jekyll front matter so it is compiled by Jekyll's Sass pipeline. */
+:root { color-scheme: light; --global-bg-color: #fff; --global-text-color: #333; --global-secondary-text-color: #666; --global-muted-color: #828282; --global-theme-color: #b509ac; --global-hover-color: #790073; --global-border-color: #e8e8e8; --global-code-bg-color: #fafafa; --global-header-bg-color: rgba(255, 255, 255, 0.95); --global-footer-bg-color: #424242; --global-footer-text-color: #e8e8e8; --global-footer-link-color: #fff; --global-icon-color: #424242; }
+
+html[data-theme='dark'] { color-scheme: dark; --global-bg-color: #202124; --global-text-color: #e8eaed; --global-secondary-text-color: #c4c7c5; --global-muted-color: #a8adb3; --global-theme-color: #7bcce4; --global-hover-color: #a8e3f4; --global-border-color: #4a4d51; --global-code-bg-color: #2b2d31; --global-header-bg-color: rgba(32, 33, 36, 0.95); --global-footer-bg-color: #17181a; --global-footer-text-color: #d7dadd; --global-footer-link-color: #fff; --global-icon-color: #e8eaed; }
+
+/* Preserve automatic dark mode even if JavaScript is unavailable. */
+@media (prefers-color-scheme: dark) { html:not([data-theme]) { color-scheme: dark; --global-bg-color: #202124; --global-text-color: #e8eaed; --global-secondary-text-color: #c4c7c5; --global-muted-color: #a8adb3; --global-theme-color: #7bcce4; --global-hover-color: #a8e3f4; --global-border-color: #4a4d51; --global-code-bg-color: #2b2d31; --global-header-bg-color: rgba(32, 33, 36, 0.95); --global-footer-bg-color: #17181a; --global-footer-text-color: #d7dadd; --global-footer-link-color: #fff; --global-icon-color: #e8eaed; } }
+
+body, blockquote footer { background-color: var(--global-bg-color); }
+
+.site-header { background-color: var(--global-header-bg-color); }
+
+body, p, h1, h2, h3, h4, h5, h6, em, div, span, strong, .news table td, .news table th { color: var(--global-text-color); }
+
+a, .social a { color: var(--global-secondary-text-color); }
+
+a:hover, .social a:hover { color: var(--global-theme-color); }
+
+article a, .news a, .publications h2, .star { color: var(--global-theme-color); }
+
+.bibliography li .author a { border-color: var(--global-theme-color); }
+
+.bibliography .periodical em { color: var(--global-secondary-text-color) !important; }
+
+.site-header, .news, .social, .header-bar, .post-list > li, .year { border-color: var(--global-border-color); }
+
+.post-meta, .caption, blockquote footer { color: var(--global-muted-color); }
+
+pre, code, .highlight { background-color: var(--global-code-bg-color); }
+
+code { color: var(--global-theme-color); }
+
+table > thead > tr > th, table > thead > tr > td, table > tbody > tr > th, table > tbody > tr > td, table > tfoot > tr > th, table > tfoot > tr > td, table > thead > tr > th, table > tbody + tbody { border-color: var(--global-border-color); }
+
+.bibliography li span.abstract.hidden { border-color: var(--global-bg-color); }
+
+.bibliography li span.abstract.hidden.open { border-color: var(--global-muted-color); }
+
+.theme-toggle { appearance: none; background: transparent; border: 0; color: var(--global-secondary-text-color); cursor: pointer; line-height: 1; margin-left: 10px; padding: 0.35rem; vertical-align: middle; }
+
+.theme-toggle:hover { color: var(--global-theme-color); }
+
+.theme-toggle:focus-visible { border-radius: 3px; outline: 2px solid var(--global-theme-color); outline-offset: 2px; }
+
+.theme-toggle__light, html[data-theme='dark'] .theme-toggle__dark { display: none; }
+
+html[data-theme='dark'] .theme-toggle__light { display: inline; }
+
+@media (prefers-reduced-motion: no-preference) { body, .site-header { transition: background-color 150ms ease, color 150ms ease; } }
+
+/*# sourceMappingURL=theme.css.map */

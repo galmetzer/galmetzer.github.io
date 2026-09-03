@@ -9,11 +9,28 @@
   <title>Gal Metzer | projects</title>
   <meta name="description" content="">
 
+  <script>
+  (function () {
+    var theme;
+    try {
+      theme = localStorage.getItem('theme');
+    } catch (error) {}
+
+    if (theme !== 'light' && theme !== 'dark') {
+      theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    }
+
+    document.documentElement.dataset.theme = theme;
+  }());
+</script>
+
+
   <link rel="shortcut icon" href="/assets/img/favicon.png">
    <link rel="stylesheet" href="/assets/css/main.css">
     <link rel="stylesheet" href="/assets/css/style.css">
 
    <link rel="stylesheet" href="/assets/css/other-main.css">
+  <link rel="stylesheet" href="/assets/css/theme.css">
   <link rel="canonical" href="/projects/">
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -50,6 +67,11 @@
         <a class="page-link" href="#publications">publications</a>
         <a class="page-link" href="#talks">talks</a>
         <a class="page-link" href="#social">contact</a>
+
+        <button class="theme-toggle" type="button" aria-label="Switch color theme" title="Switch color theme">
+  <span class="theme-toggle__light" aria-hidden="true">&#9728;</span>
+  <span class="theme-toggle__dark" aria-hidden="true">&#9790;</span>
+</button>
 
 
       </div>
@@ -107,6 +129,9 @@
 
 <!-- Load Common JS -->
 <script src="/assets/js/common.js"></script>
+
+<!-- Light/dark color scheme -->
+<script src="/assets/js/theme.js"></script>
 
 
 <!-- Load KaTeX -->
